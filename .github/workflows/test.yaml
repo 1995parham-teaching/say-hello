@@ -8,6 +8,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+      - run: cd web/say-hello
+      - run: npm install
+      - run: npm build
+      - run: cd ../..
       - name: golangci-lint
         uses: golangci/golangci-lint-action@v2
         with:
