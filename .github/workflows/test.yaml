@@ -21,6 +21,11 @@ jobs:
       - uses: actions/setup-go@v2
         with:
           go-version: 1.17
+      - uses: actions/setup-node@v2
+      - run: cd web/say-hello
+      - run: npm install
+      - run: npm build
+      - run: cd ../..
       - run: go test -v ./... -covermode=atomic -coverprofile=coverage.out
       - uses: codecov/codecov-action@v1
         with:
