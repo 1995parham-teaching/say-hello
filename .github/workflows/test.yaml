@@ -12,7 +12,7 @@ jobs:
       - run: |
           cd web/say-hello
           npm install
-          npm build
+          npm run build
       - name: golangci-lint
         uses: golangci/golangci-lint-action@v2
         with:
@@ -30,7 +30,7 @@ jobs:
       - run: |
           cd web/say-hello
           npm install
-          npm build
+          npm run build
       - run: go test -v ./... -covermode=atomic -coverprofile=coverage.out
       - uses: codecov/codecov-action@v1
         with:
