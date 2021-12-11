@@ -9,10 +9,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
-      - run: cd web/say-hello
-      - run: npm install
-      - run: npm build
-      - run: cd ../..
+      - run: |
+          cd web/say-hello
+          npm install
+          npm build
       - name: golangci-lint
         uses: golangci/golangci-lint-action@v2
         with:
@@ -27,10 +27,10 @@ jobs:
         with:
           go-version: 1.17
       - uses: actions/setup-node@v2
-      - run: cd web/say-hello
-      - run: npm install
-      - run: npm build
-      - run: cd ../..
+      - run: |
+          cd web/say-hello
+          npm install
+          npm build
       - run: go test -v ./... -covermode=atomic -coverprofile=coverage.out
       - uses: codecov/codecov-action@v1
         with:
