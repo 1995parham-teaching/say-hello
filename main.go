@@ -2,31 +2,23 @@ package main
 
 import (
 	"embed"
-	"io/fs"
 	"log"
-	"net/http"
 
+	"github.com/cng-by-example/say-hello/internal/handler"
 	"github.com/gofiber/fiber/v2"
-	"github.com/gofiber/fiber/v2/middleware/filesystem"
+	"github.com/gofiber/fiber/v2/middleware/logger"
 )
 
-//go:embed say-hello/build
+//go:embed web/say-hello/build
 var embeddedFiles embed.FS
 
 func main() {
 	app := fiber.New()
 
-	app.Use("/", filesystem.New(filesystem.Config{
-		Root: getFileSystem(),
-	}))
+	app.Use(logger.New())
+
+	handler.NewStatic("web/say-hello/build", embeddedFiles).Register(app.Group("/"))
+	handler.NewHello().Register(app.Group("/api"))
+
 	log.Fatal(app.Listen(":3000"))
-}
-
-func getFileSystem() http.FileSystem {
-	fsys, err := fs.Sub(embeddedFiles, "say-hello/build")
-	if err != nil {
-		panic(err)
-	}
-
-	return http.FS(fsys)
 }
