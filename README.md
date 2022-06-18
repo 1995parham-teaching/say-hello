@@ -14,7 +14,7 @@ where ever you want.
 ```sh
 # starting from the project root directory
 cd web/say-hello
-npm build
+npm run build
 
 cd ../..
 go build
