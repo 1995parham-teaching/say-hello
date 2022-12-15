@@ -4,7 +4,7 @@ import (
 	"embed"
 	"log"
 
-	"github.com/cng-by-example/say-hello/internal/handler"
+	"github.com/1995parham-teaching/say-hello/internal/handler"
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/logger"
 )

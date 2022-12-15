@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/cng-by-example/say-hello/internal/response"
+	"github.com/1995parham-teaching/say-hello/internal/response"
 	"github.com/gofiber/fiber/v2"
 )
 

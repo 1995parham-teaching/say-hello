@@ -1,6 +1,6 @@
-module github.com/cng-by-example/say-hello
+module github.com/1995parham-teaching/say-hello
 
-go 1.18
+go 1.19
 
 require (
 	github.com/gofiber/fiber/v2 v2.34.0

@@ -7,8 +7,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/cng-by-example/say-hello/internal/handler"
-	"github.com/cng-by-example/say-hello/internal/response"
+	"github.com/1995parham-teaching/say-hello/internal/handler"
+	"github.com/1995parham-teaching/say-hello/internal/response"
 	"github.com/gofiber/fiber/v2"
 	"github.com/stretchr/testify/suite"
 )
@@ -28,7 +28,7 @@ func (suite *HelloSuite) SetupSuite() {
 func (suite *HelloSuite) TestHandler() {
 	require := suite.Require()
 
-	req := httptest.NewRequest("GET", "/hello", nil)
+	req := httptest.NewRequest(http.MethodGet, "/hello", nil)
 	req.Header.Set(fiber.HeaderContentType, fiber.MIMEApplicationJSON)
 
 	resp, err := suite.engine.Test(req)
