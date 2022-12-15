@@ -1,7 +1,7 @@
 # say-hello
 
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/cng-by-example/say-hello/test?label=test&logo=github&style=flat-square)
-[![Codecov](https://img.shields.io/codecov/c/gh/cng-by-example/say-hello?logo=codecov&style=flat-square)](https://codecov.io/gh/cng-by-example/say-hello)
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/1995parham-teaching/say-hello/test.yaml?label=test&logo=github&style=flat-square&branch=main)
+[![Codecov](https://img.shields.io/codecov/c/gh/1995parham-teaching/say-hello?logo=codecov&style=flat-square)](https://codecov.io/gh/cng-by-example/say-hello)
 
 ## Introduction
 
